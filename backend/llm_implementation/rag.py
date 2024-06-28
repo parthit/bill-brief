@@ -33,7 +33,6 @@ def analyze_from_rag(file_name):
     """
     load_dotenv()
     INDEX_DIRECTORY = f"llm_implementation/rag-indexes/{file_name}/"
-
     storage_context = StorageContext.from_defaults(persist_dir=INDEX_DIRECTORY)
     index = load_index_from_storage(storage_context)
     retriever = VectorIndexRetriever(index=index,similarity_top_k=10,)
